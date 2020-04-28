@@ -538,6 +538,7 @@ class Corpus():
         #model = KeyedVectors.load_word2vec_format(filename, binary=True)
         #model = Word2Vec.load_word2vec_format(filename, binary=True)
         model = Word2Vec.load(filename)
+        model = model.wv
         n_dim = model.syn0.shape[1]
         data = np.random.normal(size=(n_words, n_dim)).astype('float32')
         data -= data.mean()
